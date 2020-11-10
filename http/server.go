@@ -18,6 +18,7 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			w.Write([]byte("Error while parsing r parameter."))
+			fmt.Printf("Error while parsing r parameter: %s\n", err)
 			return
 		}
 		duration = rand.Intn(int(d))
@@ -26,6 +27,7 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			w.Write([]byte("Error while parsing t parameter."))
+			fmt.Printf("Error while parsing t parameter: %s\n", err)
 			return
 		}
 		duration = int(d)
@@ -43,5 +45,9 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/ping", pingHandler)
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		fmt.Printf("Error while ListenAndServe: %s\n", err)
+		return
+	}
 }
