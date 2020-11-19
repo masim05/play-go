@@ -11,6 +11,7 @@ import (
 )
 
 func sleepHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("%s /sleep\n", time.Now().String())
 
 	query := r.URL.Query()
 	duration := 0
@@ -48,6 +49,8 @@ func sleepHandler(w http.ResponseWriter, r *http.Request) {
 var mu sync.Mutex
 
 func mutexHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("%s /mutex\n", time.Now().String())
+
 	query := r.URL.Query()
 	d, err := strconv.ParseUint(query["r"][0], 10, 16)
 	if err != nil {
