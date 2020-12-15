@@ -9,3 +9,10 @@ func TestAdderHappyPath(t *testing.T) {
 		t.Error("Expected 3, got ", res)
 	}
 }
+
+func TestAdderBigNumbers(t *testing.T) {
+	res := adder.Add(1000000, 20000000000000000)
+	if res != 1000000+20000000000000000 {
+		t.Error("Got ", res)
+	}
+}
