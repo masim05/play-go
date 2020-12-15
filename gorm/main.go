@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	_ "github.com/lib/pq"
 	"fmt"
+	_ "github.com/lib/pq"
 )
 
 var query = `Select * FROM users ORDER BY id;`
@@ -27,7 +27,7 @@ func main() {
 
 	for rows.Next() {
 		var (
-			id string
+			id   string
 			name string
 		)
 		if err := rows.Scan(&id, &name); err != nil {

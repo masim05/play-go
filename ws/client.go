@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"golang.org/x/net/websocket"
-	"fmt"
 )
 
 var origin = "http://localhost/"

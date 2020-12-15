@@ -1,8 +1,8 @@
 package main
 
 import (
-	"net/http"
 	"io"
+	"net/http"
 
 	log "github.com/Sirupsen/logrus"
 	"golang.org/x/net/websocket"
