@@ -24,11 +24,22 @@ func New{{$decorator}}(base {{.Interface.Type}}, concurrentCalls int) *{{$decora
   // {{$method.Name}} implements {{$.Interface.Type}}
   func (_d *{{$decorator}}) {{$method.Declaration}} {
 
-    _d._burst <- 1
-
-		defer func() {
-			<-_d._burst
-		}()
+    {{- if (and $method.AcceptsContext $method.ReturnsError)}}
+      select {
+      case <-ctx.Done():
+        err = ctx.Err()
+        return
+      case _d._burst<-1:
+        defer func() {
+          <-_d._burst
+        }()
+      }
+    {{else}}
+      _d._burst<-1
+      defer func() {
+        <-_d._burst
+      }()
+    {{end}}
 
     {{ $method.Pass "_d._base." }}
   }

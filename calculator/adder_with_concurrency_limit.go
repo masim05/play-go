@@ -24,9 +24,7 @@ func NewAdderWithConcurrencyLimit(base Adder, concurrentCalls int) *AdderWithCon
 
 // Add implements Adder
 func (_d *AdderWithConcurrencyLimit) Add(a int, b int) (i1 int) {
-
 	_d._burst <- 1
-
 	defer func() {
 		<-_d._burst
 	}()
