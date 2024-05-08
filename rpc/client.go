@@ -42,7 +42,8 @@ func New(cfg RESTNodeClientConfig) (c *RESTNodeClient, e error) {
 }
 
 func (c *RESTNodeClient) GetActiveSet() ([]Validator, error) {
-	limit := 10
+	// TODO: to get limit from config
+	limit := 40
 	total := 0
 	received := 0
 	next := ""

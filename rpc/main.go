@@ -19,7 +19,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("======")
-	fmt.Println(len(r), r[0])
+	fmt.Println(len(r))
+	fmt.Println("head: ", r[0:2])
+	fmt.Println("tail: ", r[len(r)-2:])
 }
 
 type NodeClient interface {
