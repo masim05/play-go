@@ -1,4 +1,27 @@
 ## Usage
+### Mainnets
+Arkhadian network:
+```bash
+API_HOSTS=https://arkhadian-mainnet-api.itrocket.net go run .
+```
+
+Blockx network:
+```bash
+API_HOSTS=https://blockx-mainnet-api.itrocket.net go run .
+```
+
+Celestia network:
+```bash
+API_HOSTS=https://celestia-mainnet-api.itrocket.net go run .
+```
+
+Crossfi network:
+```bash
+API_HOSTS=https://crossfi-mainnet-api.itrocket.net go run .
+```
+
+
+### Testnets
 Galactica network:
 ```bash
 API_HOSTS=https://api.galactica.crptmax.com go run .
