@@ -22,14 +22,6 @@ API_HOSTS=https://crossfi-mainnet-api.itrocket.net go run .
 
 
 ### Testnets
-Galactica network:
-```bash
-API_HOSTS=https://api.galactica.crptmax.com go run .
-API_HOSTS=https://galactica-t-api.noders.services go run .
-API_HOSTS=https://galactica-testnet-api.itrocket.net go run .
-API_HOSTS=https://galactica-testnet-api.spacestake.tech go run .
-```
-
 Alignedlayer network:
 ```bash
 API_HOSTS=https://api.alignedlayer.crptmax.com go run .
@@ -59,3 +51,28 @@ Cardchain network:
 ```bash
 API_HOSTS=https://cardchain-testnet-api.itrocket.net go run .
 ```
+
+Crossfi network:
+```bash
+API_HOSTS=https://crossfi-testnet-api.itrocket.net go run .
+```
+
+Dora network:
+```bash
+API_HOSTS=https://dora-testnet-api.itrocket.net go run .
+```
+
+
+Elys network:
+```bash
+API_HOSTS=https://elys-testnet-api.itrocket.net go run .
+```
+
+Galactica network:
+```bash
+API_HOSTS=https://api.galactica.crptmax.com go run .
+API_HOSTS=https://galactica-t-api.noders.services go run .
+API_HOSTS=https://galactica-testnet-api.itrocket.net go run .
+API_HOSTS=https://galactica-testnet-api.spacestake.tech go run .
+```
+
