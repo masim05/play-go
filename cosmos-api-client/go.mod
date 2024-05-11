@@ -1,4 +1,4 @@
-module github.com/masim05/play-go/rpc
+module github.com/masim05/play-go/cosmos-api-client
 
 go 1.22.2
 
