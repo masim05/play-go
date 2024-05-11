@@ -14,16 +14,35 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	r, err := client.GetActiveSet()
+	activeSetOne, err := client.GetActiveSet()
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("======")
-	fmt.Println(len(r))
-	fmt.Println("head: ", r[0:2])
-	fmt.Println("tail: ", r[len(r)-2:])
+	fmt.Println(len(activeSetOne))
+	fmt.Println("head: ", activeSetOne[0:2])
+	fmt.Println("tail: ", activeSetOne[len(activeSetOne)-2:])
+	/*
+	   activeSetTwo, err := client.GetActiveSet()
+
+	   	if err != nil {
+	   		panic(err)
+	   	}
+
+	   diff, err := sliceDiff(activeSetOne, activeSetTwo)
+
+	   	if err != nil {
+	   		panic(err)
+	   	}
+
+	   fmt.Println("diff: ", diff)
+	*/
 }
 
 type NodeClient interface {
 	GetActiveSet() ([]Validator, error)
+}
+
+func sliceDiff(s1 []any, s2 []any) (d []any, e error) {
+	return nil, nil
 }
